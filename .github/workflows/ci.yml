@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout strategy-pack
+        uses: actions/checkout@v4
+
+      - name: Checkout trading-sdk
+        uses: actions/checkout@v4
+        with:
+          repository: szne/tradeing-sdk
+          path: external/trading-sdk
+
+      - name: Checkout strategy-cli
+        uses: actions/checkout@v4
+        with:
+          repository: szne/tradeing-strategy-cli
+          path: external/strategy-cli
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest pandas
+          python -m pip install -e external/trading-sdk
+          python -m pip install -e external/strategy-cli
+          python -m pip install -e .
+
+      - name: Validate strategy-pack
+        run: strategy validate --path .
+
+      - name: Run tests
+        run: pytest -q
