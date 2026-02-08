@@ -1,11 +1,9 @@
 from strategy_pack.strategies.legacy.five_minute_momentum import FiveMinuteMomentumStrategy
 from strategy_pack.strategies.legacy.five_minute_reversion import FiveMinuteReversionStrategy
 from strategy_pack.strategies.legacy.sample_strategy import SampleStrategy
-from strategy_pack.strategies.my_strategy import MyStrategy
 
 __all__ = [
     "FiveMinuteMomentumStrategy",
     "FiveMinuteReversionStrategy",
-    "MyStrategy",
     "SampleStrategy",
 ]
