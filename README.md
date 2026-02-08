@@ -13,3 +13,6 @@ pip install -e .
 
 - group: `trading_system.strategies`
 - name: `my_strategy`
+
+## SDK 互換範囲
+- `trading-sdk>=0.1,<0.2` を前提にしています。

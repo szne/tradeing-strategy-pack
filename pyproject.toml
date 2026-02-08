@@ -7,7 +7,7 @@ name = "strategy-pack"
 version = "0.1.0"
 description = "External strategy pack for the trading engine"
 requires-python = ">=3.11"
-dependencies = ["trading-sdk>=0.1.0"]
+dependencies = ["trading-sdk>=0.1,<0.2"]
 
 [project.entry-points."trading_system.strategies"]
 my_strategy = "strategy_pack.strategies.my_strategy:MyStrategy"
