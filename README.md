@@ -36,5 +36,8 @@ pip install -e .
 ## SDK 互換範囲
 - `trading-sdk>=0.1,<0.2` を前提にしています。
 
+## Coding Agent運用
+- エージェント運用ルールは `CODEX.md` を参照してください。
+
 ## リリース
 - 手順は `RELEASE.md` を参照してください。
